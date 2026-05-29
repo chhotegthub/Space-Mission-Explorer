@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Mission Explorer - Interactive Solar System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🚀 Space Mission Explorer</div>
+            <ul class="nav-menu">
+                <li><a href="#solar-system" class="nav-link">Solar System</a></li>
+                <li><a href="#missions" class="nav-link">Missions</a></li>
+                <li><a href="#timeline" class="nav-link">Timeline</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Explore the Universe</h1>
+            <p>An interactive journey through space, planets, and historic missions</p>
+            <button class="cta-button" onclick="scrollToSection('solar-system')">Start Exploring</button>
+        </div>
+        <div class="stars"></div>
+    </section>
+
+    <!-- Solar System Section -->
+    <section id="solar-system" class="solar-system-section">
+        <h2>The Solar System</h2>
+        <div class="solar-system-container">
+            <canvas id="solarSystemCanvas"></canvas>
+            <div class="planet-info">
+                <div id="planetDetails">
+                    <h3>Hover over planets to learn more</h3>
+                    <p>Click on any planet for detailed information</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rockets Section -->
+    <section class="rockets-section">
+        <h2>Historic Rockets</h2>
+        <div class="rockets-grid">
+            <div class="rocket-card">
+                <div class="rocket-icon">🚀</div>
+                <h3>Saturn V</h3>
+                <p>The most powerful rocket ever flown successfully. Used in Apollo missions.</p>
+                <div class="specs">
+                    <span class="spec-item">Height: 363 ft</span>
+                    <span class="spec-item">Thrust: 7.5M lbf</span>
+                </div>
+            </div>
+            <div class="rocket-card">
+                <div class="rocket-icon">🛸</div>
+                <h3>Falcon 9</h3>
+                <p>SpaceX's reusable orbital rocket. First rocket to land itself.</p>
+                <div class="specs">
+                    <span class="spec-item">Height: 230 ft</span>
+                    <span class="spec-item">Thrust: 1.5M lbf</span>
+                </div>
+            </div>
+            <div class="rocket-card">
+                <div class="rocket-icon">🌟</div>
+                <h3>Space Launch System</h3>
+                <p>NASA's next-generation heavy-lift launch system for Moon and Mars missions.</p>
+                <div class="specs">
+                    <span class="spec-item">Height: 364 ft</span>
+                    <span class="spec-item">Thrust: 8.8M lbf</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Missions Section -->
+    <section id="missions" class="missions-section">
+        <h2>Historic Missions</h2>
+        <div class="missions-container">
+            <!-- Apollo 11 Mission -->
+            <div class="mission-card featured">
+                <div class="mission-header">
+                    <h3>Apollo 11 Moon Landing</h3>
+                    <span class="mission-entity">NASA</span>
+                </div>
+                <div class="mission-details">
+                    <div class="mission-info">
+                        <p><strong>Date:</strong> July 20-21, 1969</p>
+                        <p><strong>Astronauts:</strong> Neil Armstrong, Buzz Aldrin, Michael Collins</p>
+                        <p><strong>Achievement:</strong> First humans to walk on the Moon</p>
+                        <p class="mission-description">Apollo 11 was the defining moment in space exploration. Neil Armstrong became the first human to set foot on the Moon, followed by Buzz Aldrin. Michael Collins orbited the Moon while they explored the lunar surface.</p>
+                    </div>
+                    <div class="mission-image">
+                        👨‍🚀
+                    </div>
+                </div>
+                <div class="mission-highlight">
+                    <strong>"That's one small step for man, one giant leap for mankind"</strong> - Neil Armstrong
+                </div>
+            </div>
+
+            <!-- Other Missions -->
+            <div class="mission-card">
+                <div class="mission-header">
+                    <h3>Mars Rovers - Curiosity & Perseverance</h3>
+                    <span class="mission-entity">NASA</span>
+                </div>
+                <div class="mission-details">
+                    <p><strong>Active Since:</strong> Curiosity (2012), Perseverance (2021)</p>
+                    <p><strong>Objective:</strong> Explore Mars surface and search for signs of past life</p>
+                    <p>Currently exploring Gale Crater and Jezero Crater respectively.</p>
+                </div>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-header">
+                    <h3>International Space Station</h3>
+                    <span class="mission-entity">International Partnership</span>
+                </div>
+                <div class="mission-details">
+                    <p><strong>Operational Since:</strong> 1998</p>
+                    <p><strong>Objective:</strong> Continuous human presence in low Earth orbit</p>
+                    <p>A collaborative effort involving NASA, ESA, Roscosmos, and other space agencies.</p>
+                </div>
+            </div>
+
+            <div class="mission-card">
+                <div class="mission-header">
+                    <h3>Artemis Program</h3>
+                    <span class="mission-entity">NASA</span>
+                </div>
+                <div class="mission-details">
+                    <p><strong>Objective:</strong> Return humans to the Moon</p>
+                    <p><strong>Goal:</strong> Establish sustainable lunar exploration and prepare for Mars</p>
+                    <p>Artemis I successfully launched in November 2022 in an uncrewed test flight.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <h2>Space Exploration Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">1957</div>
+                <div class="timeline-content">
+                    <h4>Sputnik 1 Launch</h4>
+                    <p>First artificial satellite launched by USSR</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">1961</div>
+                <div class="timeline-content">
+                    <h4>First Human in Space</h4>
+                    <p>Yuri Gagarin completes first manned spaceflight</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">1969</div>
+                <div class="timeline-content">
+                    <h4>Moon Landing</h4>
+                    <p>Apollo 11 lands humans on the Moon</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">1981</div>
+                <div class="timeline-content">
+                    <h4>Space Shuttle Era</h4>
+                    <p>First Space Shuttle Columbia launches</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">1998</div>
+                <div class="timeline-content">
+                    <h4>ISS Construction Begins</h4>
+                    <p>International Space Station first module launches</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2012</div>
+                <div class="timeline-content">
+                    <h4>Curiosity on Mars</h4>
+                    <p>Mars rover Curiosity lands in Gale Crater</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2021</div>
+                <div class="timeline-content">
+                    <h4>Perseverance Rover</h4>
+                    <p>NASA's Perseverance rover lands on Mars</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2022</div>
+                <div class="timeline-content">
+                    <h4>Artemis I</h4>
+                    <p>NASA's new Moon program launches uncrewed test flight</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Planets Detail Section -->
+    <section class="planets-section">
+        <h2>The Planets</h2>
+        <div class="planets-grid">
+            <div class="planet-card" data-planet="Mercury">
+                <div class="planet-visual mercury"></div>
+                <h3>Mercury</h3>
+                <p>Closest planet to the Sun. Extremely hot days and cold nights.</p>
+            </div>
+            <div class="planet-card" data-planet="Venus">
+                <div class="planet-visual venus"></div>
+                <h3>Venus</h3>
+                <p>Hottest planet with a thick atmosphere of carbon dioxide.</p>
+            </div>
+            <div class="planet-card" data-planet="Earth">
+                <div class="planet-visual earth"></div>
+                <h3>Earth</h3>
+                <p>Our home planet. The only known planet with life.</p>
+            </div>
+            <div class="planet-card" data-planet="Mars">
+                <div class="planet-visual mars"></div>
+                <h3>Mars</h3>
+                <p>The Red Planet. Target for future human colonization.</p>
+            </div>
+            <div class="planet-card" data-planet="Jupiter">
+                <div class="planet-visual jupiter"></div>
+                <h3>Jupiter</h3>
+                <p>Largest planet in our solar system. Gas giant with great storms.</p>
+            </div>
+            <div class="planet-card" data-planet="Saturn">
+                <div class="planet-visual saturn"></div>
+                <h3>Saturn</h3>
+                <p>Famous for its spectacular ring system.</p>
+            </div>
+            <div class="planet-card" data-planet="Uranus">
+                <div class="planet-visual uranus"></div>
+                <h3>Uranus</h3>
+                <p>Ice giant that rotates on its side.</p>
+            </div>
+            <div class="planet-card" data-planet="Neptune">
+                <div class="planet-visual neptune"></div>
+                <h3>Neptune</h3>
+                <p>Farthest planet from the Sun. Strongest winds in the solar system.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Moon Missions Section -->
+    <section class="moon-section">
+        <h2>Moon Exploration</h2>
+        <div class="moon-content">
+            <div class="moon-info">
+                <h3>Earth's Natural Satellite</h3>
+                <p>The Moon has been humanity's gateway to space exploration.</p>
+                <ul class="moon-facts">
+                    <li>Distance from Earth: 384,400 km</li>
+                    <li>Diameter: 3,474 km</li>
+                    <li>Apollo missions: 6 successful Moon landings</li>
+                    <li>Astronauts on Moon: 12</li>
+                    <li>Total Moon rocks brought back: 382 kg</li>
+                </ul>
+            </div>
+            <div class="moon-visual">
+                🌙
+            </div>
+        </div>
+        <div class="apollo-missions">
+            <h4>Apollo Moon Landings</h4>
+            <div class="apollo-grid">
+                <div class="apollo-card">Apollo 11 <span>1969</span></div>
+                <div class="apollo-card">Apollo 12 <span>1969</span></div>
+                <div class="apollo-card">Apollo 14 <span>1971</span></div>
+                <div class="apollo-card">Apollo 15 <span>1971</span></div>
+                <div class="apollo-card">Apollo 16 <span>1972</span></div>
+                <div class="apollo-card">Apollo 17 <span>1972</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <h2>About Space Mission Explorer</h2>
+        <div class="about-content">
+            <p>Space Mission Explorer is an interactive educational platform dedicated to space exploration and discovery. It combines visualizations of our solar system with comprehensive information about historic space missions, from the Apollo 11 Moon landing to modern Mars rovers.</p>
+            <p>Our mission is to inspire the next generation of space explorers and scientists by providing engaging, interactive content about humanity's achievements in space.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 Space Mission Explorer. All rights reserved.</p>
+        <p>Made with 🚀 and 💫</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
